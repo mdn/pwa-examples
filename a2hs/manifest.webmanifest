@@ -10,7 +10,6 @@
     }
   ],
   "name": "Awesome frog pictures",
-  ​​"orientation": "landscape",
   "short_name": "Frogs",
   "start_url": "/pwa-examples/a2hs/index.html"
 }
