@@ -11,5 +11,5 @@
   ],
   "name": "Awesome frog pictures",
   "short_name": "Frogs",
-  "start_url": "/?homescreen=1"
+  "start_url": "/pwa-examples/a2hs/index.html"
 }
