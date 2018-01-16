@@ -10,5 +10,6 @@
     }
   ],
   "name": "Awesome frog pictures",
-  "short_name": "Frogs"
+  "short_name": "Frogs",
+  "start_url": "./index.html"
 }
