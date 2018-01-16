@@ -11,5 +11,5 @@
   ],
   "name": "Awesome frog pictures",
   "short_name": "Frogs",
-  "start_url": "/"
+  "start_url": "/?homescreen=1"
 }
