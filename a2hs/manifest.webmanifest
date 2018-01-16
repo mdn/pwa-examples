@@ -1,0 +1,26 @@
+{
+  "background_color": "purple",
+  "description": "Shows random frog pictures. Hey, at least it isn't cats.",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "icon/lowres.webp",
+      "sizes": "48x48",
+      "type": "image/webp"
+    },
+    {
+      "src": "icon/lowres",
+      "sizes": "48x48"
+    },
+    {
+      "src": "icon/hd_hi.ico",
+      "sizes": "72x72 96x96 128x128 256x256"
+    },
+    {
+      "src": "icon/hd_hi.svg",
+      "sizes": "72x72"
+    }
+  ],
+  "name": "Awesome frog pictures",
+  "short_name": "Frogs"
+}
