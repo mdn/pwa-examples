@@ -11,5 +11,5 @@
   ],
   "name": "Awesome frog pictures",
   "short_name": "Frogs",
-  "start_url": "./manifest.webmanifest"
+  "start_url": "index.html"
 }
