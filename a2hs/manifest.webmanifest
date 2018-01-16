@@ -4,8 +4,9 @@
   "display": "fullscreen",
   "icons": [
     {
-      "src": "icon/frog-icon.svg",
-      "sizes": "72x72 96x96 128x128 192x192 256x256"
+      "src": "icon/frog-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
     }
   ],
   "name": "Awesome frog pictures",
