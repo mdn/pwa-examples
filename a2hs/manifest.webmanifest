@@ -4,21 +4,8 @@
   "display": "fullscreen",
   "icons": [
     {
-      "src": "icon/lowres.webp",
-      "sizes": "48x48",
-      "type": "image/webp"
-    },
-    {
-      "src": "icon/lowres",
-      "sizes": "48x48"
-    },
-    {
-      "src": "icon/hd_hi.ico",
-      "sizes": "72x72 96x96 128x128 256x256"
-    },
-    {
-      "src": "icon/hd_hi.svg",
-      "sizes": "72x72"
+      "src": "icon/frog-icon.svg",
+      "sizes": "72x72 96x96 128x128 192x192 256x256"
     }
   ],
   "name": "Awesome frog pictures",
