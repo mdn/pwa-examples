@@ -216,7 +216,7 @@ var games = [
 		github: 'github.com/karanganesan/Lost_in_Metaverse'
 	},
 	{
-		slug: 'emma-3D',
+		slug: 'emma-3d',
 		name: 'Emma-3D',
 		author: 'Prateek Roushan',
 		twitter: '',
