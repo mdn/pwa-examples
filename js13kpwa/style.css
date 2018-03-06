@@ -4,9 +4,9 @@
   font-weight: 400;
   src: local('Graduate'),
   	local('Graduate-Regular'),
-  	url(./fonts/graduate.eot) format('embedded-opentype'),
-  	url(./fonts/graduate.ttf) format('truetype'),
-  	url(./fonts/graduate.woff) format('woff');
+  	url(fonts/graduate.eot) format('embedded-opentype'),
+  	url(fonts/graduate.ttf) format('truetype'),
+  	url(fonts/graduate.woff) format('woff');
 }
 
 * {
