@@ -38,7 +38,7 @@ header {
 	border-bottom: 4px solid #fff;
 }
 nav {
-	width: 960px;
+	width: 70%;
 	margin: 10px auto;
 	position: relative;
 }
@@ -68,7 +68,7 @@ nav li a:hover {
 
 main {
 	box-sizing: border-box;
-	width: 960px;
+	width: 70%;
 	margin: 0 auto 20px;
 	padding: 0 30px;
 	background: #fafafa;
@@ -133,7 +133,7 @@ footer {
 	border-bottom: 5px solid #a52730;
 }
 footer div {
-	width: 960px;
+	width: 70%;
 	margin: 0 auto;
 	color: #e2e2e2;
 	font-size: 12px;
