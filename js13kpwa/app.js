@@ -1,6 +1,6 @@
 // Generating content based on the template
 var template = "<article>\n\
-	<img src='data/img/SLUG.jpg'>\n\
+	<img src='data/img/SLUG.jpg' alt='NAME'>\n\
 	<h3>#POS. NAME</h3>\n\
 	<ul>\n\
 	<li><span>Author:</span> <strong>AUTHOR</strong></li>\n\
@@ -19,6 +19,7 @@ for(var i=0; i<games.length; i++) {
 		.replace(/TWITTER/g,games[i].twitter)
 		.replace(/WEBSITE/g,games[i].website)
 		.replace(/GITHUB/g,games[i].github);
+	entry = entry.replace('<a href=\'http:///\'></a>','-');
 	content += entry;
 };
 document.getElementById('content').innerHTML = content;
@@ -28,11 +29,14 @@ if('serviceWorker' in navigator) {
 	navigator.serviceWorker.register('/pwa-examples/js13kpwa/sw.js');
 };
 
-// Requesting permission for Notifications
-Notification.requestPermission().then(function(result) {
-	if(result === 'granted') {
-		randomNotification();
-	}
+// Requesting permission for Notifications after clicking on the button
+var button = document.getElementById("notifications");
+button.addEventListener('click', function(e) {
+	Notification.requestPermission().then(function(result) {
+		if(result === 'granted') {
+			randomNotification();
+		}
+	});
 });
 
 // Setting up random Notification
