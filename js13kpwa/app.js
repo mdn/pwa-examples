@@ -31,7 +31,7 @@ if('serviceWorker' in navigator) {
 // Requesting permission for Notifications
 Notification.requestPermission().then(function(result) {
 	if(result === 'granted') {
-		randomNotification();
+		// randomNotification();
 	}
 });
 
