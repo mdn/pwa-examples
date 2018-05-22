@@ -1,6 +1,6 @@
 // Generating content based on the template
 var template = "<article>\n\
-	<img src='data/img/SLUG.jpg' alt='NAME'>\n\
+	<img src='data/img/placeholder.png' data-src='data/img/SLUG.jpg' alt='NAME'>\n\
 	<h3>#POS. NAME</h3>\n\
 	<ul>\n\
 	<li><span>Author:</span> <strong>AUTHOR</strong></li>\n\
@@ -51,4 +51,31 @@ function randomNotification() {
 	}
 	var notif = new Notification(notifTitle, options);
 	setTimeout(randomNotification, 30000);
+};
+
+// Progressive loading images
+var imagesToLoad = document.querySelectorAll('img[data-src]');
+var loadImages = function(image) {
+	image.setAttribute('src', image.getAttribute('data-src'));
+	image.onload = function() {
+		image.removeAttribute('data-src');
+	};
+};
+if('IntersectionObserver' in window) {
+	var observer = new IntersectionObserver(function(items, observer) {
+		items.forEach(function(item) {
+			if(item.isIntersecting) {
+				loadImages(item.target);
+				observer.unobserve(item.target);
+			}
+		});
+	});
+	imagesToLoad.forEach(function(img) {
+		observer.observe(img);
+	});
+}
+else {
+	imagesToLoad.forEach(function(img) {
+		loadImages(img);
+	});
 }

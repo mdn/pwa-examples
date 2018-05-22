@@ -104,6 +104,13 @@ article {
 	border-top: 0.1em solid #acabab;
 	padding: 1em;
 }
+article img[data-src] {
+	filter: blur(0.2em);
+}
+article img {
+	filter: blur(0em);
+	transition: filter 0.5s;
+}
 footer {
 	background: #2d2d2d url(img/bg.png) repeat;
 	border-top: 0.2em solid #fff;
