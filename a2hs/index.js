@@ -6,8 +6,6 @@ function randomValueFromArray(array) {
   return array[randomNo];
 }
 
-document.cookie = "value=foxes";
-
 setInterval(function() {
   let randomChoice = randomValueFromArray(images);
   imgElem.src = 'images/' + randomChoice + '.jpg';
