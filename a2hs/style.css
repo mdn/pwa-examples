@@ -13,6 +13,12 @@ img {
   width: 100%;
 }
 
+.add-button {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+
 @media (orientation: landscape) {
   img {
     height: 100%;
