@@ -22,10 +22,7 @@ var appShellFiles = [
   '/pwa-examples/js13kpwa/icons/icon-256.png',
   '/pwa-examples/js13kpwa/icons/icon-512.png'
 ];
-var gamesImages = [];
-for(var i=0; i<games.length; i++) {
-  gamesImages.push('data/img/'+games[i].slug+'.jpg');
-}
+var gamesImages = games.map(g => 'data/img/'+g.slug+'.jpg');
 var contentToCache = appShellFiles.concat(gamesImages);
 
 // Installing Service Worker
