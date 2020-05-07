@@ -10,16 +10,17 @@ var template = "<article>\n\
 	<li><span>More:</span> <a href='http://js13kgames.com/entries/SLUG'>js13kgames.com/entries/SLUG</a></li>\n\
 	</ul>\n\
 </article>";
+var templateKeys = ['slug', 'name', 'author', 'twitter', 'website', 'github'];
+var templateReplaces = templateKeys.map(k => [new RegExp(k.toUpperCase(), 'g'), k]);
+function templateFill(template, obj) {
+	for (r in templateReplaces) {
+		template = template.replace(r[0], obj[r[1]]);
+	}
+	return template.replace('<a href=\'http:///\'></a>','-');
+}
 var content = '';
 for(var i=0; i<games.length; i++) {
-	var entry = template.replace(/POS/g,(i+1))
-		.replace(/SLUG/g,games[i].slug)
-		.replace(/NAME/g,games[i].name)
-		.replace(/AUTHOR/g,games[i].author)
-		.replace(/TWITTER/g,games[i].twitter)
-		.replace(/WEBSITE/g,games[i].website)
-		.replace(/GITHUB/g,games[i].github);
-	entry = entry.replace('<a href=\'http:///\'></a>','-');
+	var entry = templateFill(template.replace(/POS/g,(i+1)), games[i]);
 	content += entry;
 };
 document.getElementById('content').innerHTML = content;
