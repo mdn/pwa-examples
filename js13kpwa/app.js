@@ -18,11 +18,7 @@ function templateFill(template, obj) {
 	}
 	return template.replace('<a href=\'http:///\'></a>','-');
 }
-var content = '';
-for(var i=0; i<games.length; i++) {
-	var entry = templateFill(template.replace(/POS/g,(i+1)), games[i]);
-	content += entry;
-};
+var content = games.map((g, i) => templateFill(template.replace(/POS/g,i+1), g)).join('');
 document.getElementById('content').innerHTML = content;
 
 // Registering Service Worker
