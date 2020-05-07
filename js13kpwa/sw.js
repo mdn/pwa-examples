@@ -3,24 +3,24 @@ self.importScripts('data/games.js');
 // Files to cache
 var cacheName = 'js13kPWA-v1';
 var appShellFiles = [
-  '/pwa-examples/js13kpwa/',
-  '/pwa-examples/js13kpwa/index.html',
-  '/pwa-examples/js13kpwa/app.js',
-  '/pwa-examples/js13kpwa/style.css',
-  '/pwa-examples/js13kpwa/fonts/graduate.eot',
-  '/pwa-examples/js13kpwa/fonts/graduate.ttf',
-  '/pwa-examples/js13kpwa/fonts/graduate.woff',
-  '/pwa-examples/js13kpwa/favicon.ico',
-  '/pwa-examples/js13kpwa/img/js13kgames.png',
-  '/pwa-examples/js13kpwa/img/bg.png',
-  '/pwa-examples/js13kpwa/icons/icon-32.png',
-  '/pwa-examples/js13kpwa/icons/icon-64.png',
-  '/pwa-examples/js13kpwa/icons/icon-96.png',
-  '/pwa-examples/js13kpwa/icons/icon-128.png',
-  '/pwa-examples/js13kpwa/icons/icon-168.png',
-  '/pwa-examples/js13kpwa/icons/icon-192.png',
-  '/pwa-examples/js13kpwa/icons/icon-256.png',
-  '/pwa-examples/js13kpwa/icons/icon-512.png'
+  '',
+  'index.html',
+  'app.js',
+  'style.css',
+  'fonts/graduate.eot',
+  'fonts/graduate.ttf',
+  'fonts/graduate.woff',
+  'favicon.ico',
+  'img/js13kgames.png',
+  'img/bg.png',
+  'icons/icon-32.png',
+  'icons/icon-64.png',
+  'icons/icon-96.png',
+  'icons/icon-128.png',
+  'icons/icon-168.png',
+  'icons/icon-192.png',
+  'icons/icon-256.png',
+  'icons/icon-512.png'
 ];
 var gamesImages = games.map(g => 'data/img/'+g.slug+'.jpg');
 var contentToCache = appShellFiles.concat(gamesImages);
