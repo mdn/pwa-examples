@@ -49,7 +49,7 @@ function randomNotification() {
     body: notifBody,
     icon: notifImg,
   };
-  const notif = new Notification(notifTitle, options);
+  new Notification(notifTitle, options);
   setTimeout(randomNotification, 30000);
 }
 
