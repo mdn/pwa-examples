@@ -55,9 +55,9 @@ function randomNotification() {
 
 // Progressive loading images
 const imagesToLoad = document.querySelectorAll('img[data-src]');
-const loadImages = function (image) {
+const loadImages = (image) => {
   image.setAttribute('src', image.getAttribute('data-src'));
-  image.onload = function () {
+  image.onload = () => {
     image.removeAttribute('data-src');
   };
 };
