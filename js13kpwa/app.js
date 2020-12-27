@@ -62,7 +62,7 @@ const loadImages = function (image) {
   };
 };
 if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver((items, observer) => {
+  const observer = new IntersectionObserver((items) => {
     items.forEach((item) => {
       if (item.isIntersecting) {
         loadImages(item.target);
