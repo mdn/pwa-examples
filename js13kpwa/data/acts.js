@@ -1,6 +1,6 @@
 var acts= [
     {
-      id: 1,
+      id: 0,
       name: "KATY J PEARSON",
       location: 1,
       start: 1660149000,
@@ -11,7 +11,7 @@ var acts= [
       mfwLink: "https://musikfestwochen.ch/acts/katy-j-pearson-uk/"
     },
     {
-      id: 2,
+      id: 1,
       name: "MINYO CRUSADERS",
       location: 1,
       start: 1660501800,
@@ -22,7 +22,7 @@ var acts= [
       mfwLink: "https://musikfestwochen.ch/acts/minyo-crusaders-jp/"
     },
     {
-      id: 3,
+      id: 2,
       name: "ANOUCHKA GWEN",
       location: 1,
       start: 1660754700,
@@ -33,7 +33,7 @@ var acts= [
       mfwLink: "https://musikfestwochen.ch/acts/anouchka-gwen-ch/"
     },
     {
-      id: 4,
+      id: 3,
       name: "ANAÏS MITCHELL",
       location: 2,
       start: 1660588200,
@@ -44,7 +44,7 @@ var acts= [
       mfwLink: "https://musikfestwochen.ch/acts/anais-mitchell-us/"
     },
     {
-      id: 5,
+      id: 4,
       name: "ANDRINA BOLLINGER",
       location: 2,
       start: 1660416300,
@@ -55,7 +55,7 @@ var acts= [
       mfwLink: "https://musikfestwochen.ch/acts/andrina-bollinger-ch/"
     },
     {
-      id: 6,
+      id: 5,
       name: "KING KORA",
       location: 3,
       start: 1660587300,
@@ -66,7 +66,7 @@ var acts= [
       mfwLink: "https://musikfestwochen.ch/acts/king-kora-ch/"
     },
     {
-      id: 7,
+      id: 6,
       name: "LES TROIS SUISSES",
       location: 3,
       start: "\t1661105700",
@@ -77,7 +77,7 @@ var acts= [
       mfwLink: "https://musikfestwochen.ch/acts/les-trois-suisses-ch/"
     },
     {
-      id: 8,
+      id: 7,
       name: "AGENT FLIPPER",
       location: 4,
       start: 1660757400,
@@ -88,7 +88,7 @@ var acts= [
       mfwLink: "https://musikfestwochen.ch/acts/agent-flipper-ch/"
     },
     {
-      id: 9,
+      id: 8,
       name: "ASENDORF",
       location: 4,
       start: 1660412700,
