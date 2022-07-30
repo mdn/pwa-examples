@@ -14,7 +14,7 @@
 	<script src="data/games.js" defer></script>
 	<script src="data/acts.js" defer></script>
 	<script src="data/stages.js" defer></script>
-	<script src="app.js" defer></script>
+	<script type="module"  src="app.js"></script>
 	<script src="helper/moment.js"></script>
 </head>
 <body>
@@ -25,8 +25,19 @@
 	<h1>MFW XLVII-Planner</h1>
 	<p class="description">Inoffizieler  <a href="https://musikfestwochen.ch/">Musikfestwochen</a> Planner</p>
 	<button id="notifications">Request dummy notifications</button>
+	<a href="./index.html"><button id="notifications">Programm</button></a>
 	<section id="content-favorites"></section>
 </main>
+<!-- The Modal -->
+<div id="modalFav" class="modal">
+
+	<!-- Modal content -->
+	<div class="modal-content">
+	  <span id="closeModal">&times;</span>
+	  <p id="infoModalFav"></p>
+	</div>
+  
+</div>
 <footer>
 	<p>&copy;2022, <a href="mailto:admin@vornelinks.winti.org">Kasi</a></p>
 	<p>Diese Applikation ist unabhängig vom Verein Winterthurer Musikfestwochen und in keinster Weise damit verbunden oder Partner der Organisation.</p>
