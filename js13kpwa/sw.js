@@ -1,4 +1,6 @@
 self.importScripts('data/games.js');
+self.importScripts('data/stages.js');
+self.importScripts('data/acts.js');
 
 // Files to cache
 const cacheName = 'js13kPWA-v1';

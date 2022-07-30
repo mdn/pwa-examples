@@ -1,33 +1,31 @@
 // Generating content based on the template
 const template = `<article>
-  <img src='data/img/placeholder.png' data-src='data/img/SLUG.jpg' alt='NAME'>
-  <h3>#POS. NAME</h3>
   <ul>
-  <li><span>Author:</span> <strong>AUTHOR</strong></li>
-  <li><span>Twitter:</span> <a href='https://twitter.com/TWITTER'>@TWITTER</a></li>
-  <li><span>Website:</span> <a href='http://WEBSITE/'>WEBSITE</a></li>
-  <li><span>GitHub:</span> <a href='https://GITHUB'>GITHUB</a></li>
-  <li><span>More:</span> <a href='http://js13kgames.com/entries/SLUG'>js13kgames.com/entries/SLUG</a></li>
+  <li><strong>ACT_NAME</strong></li>
+  <li>TYPE</li>
+  <li><span>FROM</span> - <span>TO</span></li>
+  <li><span>More:</span> <a href='MFW_LINK'>MMM</a></li>
   </ul>
 </article>`;
 let content = '';
-for (let i = 0; i < games.length; i++) {
+for (let i = 0; i < acts.length; i++) {
   let entry = template.replace(/POS/g, (i + 1))
-    .replace(/SLUG/g, games[i].slug)
-    .replace(/NAME/g, games[i].name)
-    .replace(/AUTHOR/g, games[i].author)
-    .replace(/TWITTER/g, games[i].twitter)
-    .replace(/WEBSITE/g, games[i].website)
-    .replace(/GITHUB/g, games[i].github);
+    .replace(/ACT_NAME/g, acts[i].name)
+    .replace(/TYPE/g, acts[i].style)
+    .replace(/MFW_LINK/g, acts[i].mfwLink)
+    .replace(/FROM/g, moment.unix(acts[i].start).format("HH:mm"))
+    .replace(/TO/g, moment.unix(acts[i].end).format("HH:mm"));
+    
   entry = entry.replace('<a href=\'http:///\'></a>', '-');
   content += entry;
 }
 document.getElementById('content').innerHTML = content;
+console.log("test");
+console.log(moment().format());
 
 // Registering Service Worker
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js')
-  .then(() => { console.log('Service Worker Registered');});
 }
 
 // Requesting permission for Notifications after clicking on the button
