@@ -1,9 +1,15 @@
 self.importScripts('data/games.js');
 self.importScripts('data/stages.js');
 self.importScripts('data/acts.js');
+self.importScripts('controller/contentFav.js');
+self.importScripts('controller/contentMain.js');
+//self.importScripts('controller/deleteAct.js');
+self.importScripts('controller/initStorage.js');
+self.importScripts('controller/saveAct.js');
+self.importScripts('controller/showInof.js');
 
 // Files to cache
-const cacheName = 'js13kPWA-v1';
+const cacheName = 'vorneLinksApp';
 const appShellFiles = [
   '/index.html',
   '/app.js',

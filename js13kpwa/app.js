@@ -3,6 +3,7 @@ import {add2Favorites} from "./controller/saveAct.js";
 import {contentMain} from "./controller/contentMain.js";
 import {contentFav} from "./controller/contentFav.js";
 import {initStorage} from "./controller/initStorage.js";
+import {removeFavorites} from "./controller/deleteAct.js";
 contentMain();
 contentFav();
 initStorage();

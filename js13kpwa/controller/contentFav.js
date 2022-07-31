@@ -1,5 +1,5 @@
-//import {showInfo} from "./showInfo.js";
-//import {add2Favorites} from "./saveAct.js";
+import {showInfo} from "./showInfo.js";
+import {removeFavorites} from "./deleteAct.js";
 
 export function contentFav(){
 
@@ -14,7 +14,7 @@ export function contentFav(){
         <li><span>FROM</span> - <span>TO</span></li>
         <li><span>More:</span> <a href='MFW_LINK'>MMM</a></li>
         <button class="infoBtn" id="info_ID" data-id="ID">info</button>
-        <button class="saveBtn" id="save_ID" data-id="ID">save</button>
+        <button class="saveBtn" id="remove_ID" data-id="ID">remove</button>
         </ul>
         </article>`;
         let content = '';
@@ -37,15 +37,39 @@ export function contentFav(){
     }
 
 
-/* 
-    for (let i = 0; i < acts.length; i++) {
-    document.getElementById(`info_${acts[i].id}`).addEventListener("click",()=>{
-        showInfo(acts[i].id)
-    })
-    
-    document.getElementById(`save_${acts[i].id}`).addEventListener("click",()=>{
-        add2Favorites(acts[i].id)
-    })
 
-    } */
+    for (let i = 0; i < acts.length; i++) {
+    const infoButton = document.getElementById(`info_${acts[i].id}`)
+    if (infoButton) {
+        infoButton.addEventListener("click",()=>{
+            showInfo(acts[i].id)
+        })   
+    }
+    
+    const removeButton = document.getElementById(`remove_${acts[i].id}`)
+    if (removeButton) {
+        removeButton.addEventListener("click",()=>{
+            removeFavorites(acts[i].id)
+
+            
+        })
+    }
+
+    } 
+    const pubButton = document.getElementById("pub")
+    if (pubButton) {
+        pubButton.addEventListener("click",()=>{
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://diariumobscuri.azurewebsites.net/addEntry", true);
+            xhr.setRequestHeader('Content-Type', 'application/json') ;
+            xhr.setRequestHeader('Access-Control-Allow-Origin:', '*' );
+            xhr.send(JSON.stringify({
+                "value": [5,4,4,8,7]
+                ,"test" : "abc"
+            }));
+            
+
+            
+        })
+    }
 }
