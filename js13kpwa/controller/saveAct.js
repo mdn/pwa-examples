@@ -10,6 +10,6 @@ export function add2Favorites(actID){
         console.log(`act with id ${actID} added to favorites`)
     }
     
-    localStorage.favorites = JSON.stringify({ "list": favoritesStored});
+    localStorage.favorites = JSON.stringify({ "list": favoritesStored.list});
 
 }
