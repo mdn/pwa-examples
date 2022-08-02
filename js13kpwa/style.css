@@ -171,3 +171,30 @@ footer a {
 	text-decoration: none;
 	cursor: pointer;
   }
+  div#dateFilter{
+	overflow-x: auto;
+	overflow-y: hidden;
+  	white-space: nowrap;
+	height: 7rem;
+	position: sticky;
+	text-align: center;
+	display: block;
+ 	top: -1px;
+	padding: 1rem 0.75rem;
+	opacity: 1;
+	background-color: rgb(0, 0, 0);
+  }
+  div#dateFilter>button{
+	display: inline-block
+  }
+  button.round{
+	border-radius: 3.75rem;
+	align-items: center;
+	width: 5rem;
+    height: 5rem;
+	box-sizing: border-box;
+    border: 1px solid rgb(9, 207, 52);
+  }
+  button.round>span{
+	display: block;
+  }
