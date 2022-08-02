@@ -59,14 +59,23 @@ export function contentFav(){
     const pubButton = document.getElementById("pub")
     if (pubButton) {
         pubButton.addEventListener("click",()=>{
-            var xhr = new XMLHttpRequest();
+            let favoritesStored = JSON.parse(localStorage.getItem("favorites"))
+            let xhr = new XMLHttpRequest();
             xhr.open("POST", "https://diariumobscuri.azurewebsites.net/addEntry", true);
             xhr.setRequestHeader('Content-Type', 'application/json') ;
-            xhr.setRequestHeader('Access-Control-Allow-Origin:', '*' );
+            xhr.setRequestHeader('Access-Control-Allow-Origin', '*' );
             xhr.send(JSON.stringify({
-                "value": [5,4,4,8,7]
+                "value": favoritesStored.list
                 ,"test" : "abc"
+                ,"name" : "kingKasi"
             }));
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    console.log(xhr.responseType);
+                    console.log(JSON.parse(xhr.response).id);
+                    localStorage.pubID = JSON.parse(xhr.response).id;
+                }
+              }
             
 
             
