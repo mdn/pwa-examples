@@ -3,6 +3,8 @@ import {add2Favorites} from "./saveAct.js";
 
 export function contentMain(){
     // Generating content based on the template
+    console.log(acts)
+    console.log(acts.sort(function(a,b){return a.start-b.start}))
     const template = `<article>
     <ul>
     <li><strong>ACT_NAME</strong></li>
