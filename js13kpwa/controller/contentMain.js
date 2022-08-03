@@ -1,18 +1,25 @@
 import {showInfo} from "./showInfo.js";
 import {add2Favorites} from "./saveAct.js";
+import {removeFavorites} from "./deleteAct.js";
 
 export function contentMain(){
     // Generating content based on the template
     const actsSorted = acts.sort(function(a,b){return a.start-b.start})
     const template = `<article>
-    <ul>
-    <li><strong>ACT_NAME</strong></li>
-    <li>TYPE</li>
-    <li><span>FROM</span> - <span>TO</span> @ <span>WHERE</span></li>
-    <li><span>More:</span> <a href='MFW_LINK'>MMM</a></li>
-    <button class="infoBtn" id="info_ID" data-id="ID">info</button>
-    <button class="saveBtn" id="save_ID" data-id="ID">save</button>
-    </ul>
+    <div class="actData">
+        <ul>
+        <li><strong>ACT_NAME</strong></li>
+        <li>TYPE</li>
+        <li><span>FROM</span> - <span>TO</span> @ <span>WHERE</span></li>
+        <li><span>More:</span> <a href='MFW_LINK'>MMM</a></li>
+        </ul>
+    </div>
+
+    <div class="actButtons">
+        <button class="round-btn" id="info_ID" data-id="ID">info</button>
+        <button class="round-btn" id="save_ID" data-id="ID">save</button>
+        <button class="round-btn"><a href='MFW_LINK'>MFW</a></button>
+	</div>
     </article>`;
     let content = '';
     for (let i = 0; i < actsSorted.length; i++) {
@@ -36,17 +43,18 @@ export function contentMain(){
     mainPage.innerHTML=content;
 
         for (let i = 0; i < actsSorted.length; i++) {
-
-            if (document.getElementById(`info_${actsSorted[i].id}`)) {
-
-                document.getElementById(`info_${actsSorted[i].id}`).addEventListener("click",()=>{
+            const infoButton = document.getElementById(`info_${actsSorted[i].id}`)
+            if (infoButton) {
+                infoButton.addEventListener("click",()=>{
                     showInfo(actsSorted[i].id)
-                })
-                
-                document.getElementById(`save_${actsSorted[i].id}`).addEventListener("click",()=>{
+                })  
+        }
+        const saveButton= document.getElementById(`save_${actsSorted[i].id}`)
+            if(saveButton){
+                saveButton.addEventListener("click",()=>{
                     add2Favorites(actsSorted[i].id)
-                })
-                
+                    saveButton.classList.add("selected")
+                })          
             }
             
         

@@ -16,11 +16,12 @@ html {
 	font-size: 62.5%;
 }
 body {
-	background: #efefef;
+	background: #2B355B;
 	font: normal 1.6em Helvetica, Arial, sans-serif;
 	line-height: 1.6;
-	color: #333;
+	color: #e2e0e9;
 	position: relative;
+	
 }
 h1, h3 {
 	font-family: "Graduate", "Times New Roman", Verdana;
@@ -49,31 +50,22 @@ h3 {
 }
 a {
 	text-decoration: none;
-	color: #b12a34;
+	color: #e2e0e9;
 }
-header {
-	background: #2d2d2d url(img/bg.png) repeat;
-	border-top: 0.2em solid #a52730;
-	border-bottom: 0.2em solid #fff;
-}
-header p {
-	width: 90%;
-	margin: 1em auto;
-	position: relative;
-}
-header img {
-	display: block;
-	width: 50%;
-	min-width: 150px;
-	max-width: 295px;	
-}
+
 .description {
 	text-align: center;
 	padding: 1em;
 }
+.description>a{
+	text-decoration: underline;
+
+}
 button {
 	display: block;
 	margin: 0 auto 2em;
+	color:  #e2e0e9;
+	background-color: #2E689C;
 }
 article  button {
 	display: inline;
@@ -81,7 +73,7 @@ article  button {
 }
 main {
 	width: 100%;
-	background: #fafafa;
+	background: #2B355B;
 }
 main a:hover {
 	text-decoration: none;
@@ -97,35 +89,34 @@ main li {
 	line-height: 1.4em;
 	margin-left: 1em;
 }
-main img {
-	float: right;
-	width: 30%;
-	min-width: 80px;
-	max-width: 160px;
-	padding-bottom: 1em;
-}
+
 article {
 	border-top: 0.1em solid #acabab;
 	padding: 1em;
+	display: block;
 }
-article img[data-src] {
-	filter: blur(0.2em);
+article>div{
+	display: inline-block;
 }
-article img {
-	filter: blur(0em);
-	transition: filter 0.5s;
+article>div.actData{
+	width: 70%;
+}
+div.actButtons{
+	text-align: center;
+	vertical-align: text-bottom;
+}
+div.actButtons>button{
+	margin-left: 5px;
 }
 footer {
-	background: #2d2d2d url(img/bg.png) repeat;
 	border-top: 0.2em solid #fff;
-	border-bottom: 0.2em solid #a52730;
 }
 footer p {
 	width: 90%;
 	margin: 0 auto;
 	color: #e2e2e2;
 	font-size: 0.7em;
-	padding: 2em 0;
+	padding: 0.4em 0;
 	position: relative;
 	text-align: center;
 	line-height: 1.2;
@@ -150,7 +141,7 @@ footer a {
   
   /* Modal Content */
   .modal-content {
-	background-color: #fefefe;
+	background-color: #2E689C;
 	margin: auto;
 	padding: 20px;
 	border: 1px solid #888;
@@ -171,7 +162,7 @@ footer a {
 	text-decoration: none;
 	cursor: pointer;
   }
-  div#dateFilter{
+  div.dateFilter{
 	overflow-x: auto;
 	overflow-y: hidden;
   	white-space: nowrap;
@@ -182,9 +173,9 @@ footer a {
  	top: -1px;
 	padding: 1rem 0.75rem;
 	opacity: 1;
-	background-color: rgb(0, 0, 0);
+	background-color: #2B355B;
   }
-  div#dateFilter>button{
+  div.dateFilter>button{
 	display: inline-block
   }
   button.round-btn{
@@ -193,11 +184,33 @@ footer a {
 	width: 5rem;
     height: 5rem;
 	box-sizing: border-box;
-    border: 1px solid rgb(9, 207, 52);
+    border: 1px solid #09cf34;
   }
   button.round-btn>span{
 	display: block;
   }
   button.round-btn.selected{
-	background-color: #df4632
+	background-color: #2da4b1;
+	border: 3px solid #24f150;
+  }
+  div.progFav{
+	display: block;
+	height: 5rem;
+	text-align: center;
+  }
+  div.progFav>a{
+	display: inline-block;
+	width: 40%;
+	height: 95%
+  }
+  div.progFav>a.selected{
+	background-color: rgb(77, 46, 127);
+  }
+  div.progFav>a>button{
+	width: 90%;
+	height: 95%;
+	background-color: transparent;
+	border-width: 0px;
+	font-weight: 800;
+	font-size: 2.5rem;
   }

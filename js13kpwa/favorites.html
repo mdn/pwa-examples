@@ -18,15 +18,29 @@
 	<script src="helper/moment.js"></script>
 </head>
 <body>
-<header>
-	<p><a class="logo" href="https://vornelinks.winti.org/"><img src="img/icons/icon-192.png" alt="MFW-Planner"></a></p>
-</header>
 <main>
 	<h1>MFW XLVII-Planner</h1>
 	<p class="description">Inoffizieler  <a href="https://musikfestwochen.ch/">Musikfestwochen</a> Planner</p>
-	<button id="notifications">Request dummy notifications</button>
-	<a href="./index.html"><button id="notifications">Programm</button></a>
-	<button id="pub">Publish</button>
+	<div class="progFav">
+		<a href="./index.html"><button>Programm</button></a>
+		<a class="selected" href="./favorites.html"><button>Merkliste</button></a>
+	</div>
+	<!-- <button id="pub">Publish</button> -->
+	<div class="dateFilter">
+		<button class="round-btn" data-starttime="1660082400"><span class="dayNumber">10</span class="weekDay"><span>MI</span></button>
+		<button class="round-btn" data-starttime="1660168800"><span class="dayNumber">11</span class="weekDay"><span>DO</span></button>
+		<button class="round-btn" data-starttime="1660255200"><span class="dayNumber">12</span class="weekDay"><span>FR</span></button>
+		<button class="round-btn" data-starttime="1660341600"><span class="dayNumber">13</span class="weekDay"><span>SA</span></button>
+		<button class="round-btn" data-starttime="1660428000"><span class="dayNumber">14</span class="weekDay"><span>SO</span></button>
+		<button class="round-btn" data-starttime="1660514400"><span class="dayNumber">15</span class="weekDay"><span>MO</span></button>
+		<button class="round-btn" data-starttime="1660600800"><span class="dayNumber">16</span class="weekDay"><span>DI</span></button>
+		<button class="round-btn" data-starttime="1660687200"><span class="dayNumber">17</span class="weekDay"><span>MI</span></button>
+		<button class="round-btn" data-starttime="1660773600"><span class="dayNumber">18</span class="weekDay"><span>DO</span></button>
+		<button class="round-btn" data-starttime="1660860000"><span class="dayNumber">19</span class="weekDay"><span>FR</span></button>
+		<button class="round-btn" data-starttime="1660946400"><span class="dayNumber">20</span class="weekDay"><span>SA</span></button>
+		<button class="round-btn" data-starttime=" 	1661032800"><span class="dayNumber">21</span class="weekDay"><span>SO</span></button>
+
+	</div>
 	<section id="content-favorites"></section>
 </main>
 <!-- The Modal -->
@@ -40,7 +54,7 @@
   
 </div>
 <footer>
-	<p>&copy;2023, <a href="mailto:admin@vornelinks.winti.org">Kasi</a></p>
+	<p>&copy;2022, <a href="mailto:admin@vornelinks.winti.org">Kasi</a></p>
 	<p>Diese Applikation ist unabhängig vom Verein Winterthurer Musikfestwochen und in keinster Weise damit verbunden oder Partner der Organisation.</p>
 </footer>
 </body>
