@@ -23,7 +23,7 @@ body {
 	position: relative;
 	
 }
-h1, h3 {
+h1 {
 	font-family: "Graduate", "Times New Roman", Verdana;
 	font-weight: normal;
 	margin-top: 0;
@@ -91,7 +91,7 @@ main li {
 }
 
 article {
-	border-top: 0.1em solid #acabab;
+	border-bottom: 0.1em solid #acabab;
 	padding: 0.3em;
 	display: block;
 }
@@ -99,7 +99,11 @@ article>div{
 	display: inline-block;
 }
 article>div.actData{
-	width: 50%;
+	width: 40%;
+	vertical-align: top;
+}
+.actName{
+	text-align: center;
 }
 div.actButtons{
 	text-align: center;

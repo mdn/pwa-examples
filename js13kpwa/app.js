@@ -16,12 +16,12 @@ const mainPage = document.getElementById('content-main');
         contentFav();
     }
 
-
-
+console.log("checkBrowser for serviceworker:",navigator.serviceWorker)
 
 // Registering Service Worker
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js')
+  console.log("test");
 }
 
 // Requesting permission for Notifications after clicking on the button
@@ -34,6 +34,7 @@ button.addEventListener('click', () => {
   });
 });*/
 
+/*
 // Setting up random Notification
 function randomNotification() {
   const randomItem = Math.floor(Math.random() * games.length);
@@ -73,3 +74,4 @@ if ('IntersectionObserver' in window) {
     loadImages(img);
   });
 }
+*/

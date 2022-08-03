@@ -5,22 +5,25 @@ import {removeFavorites} from "./deleteAct.js";
 export function contentMain(){
     // Generating content based on the template
     const actsSorted = acts.sort(function(a,b){return a.start-b.start})
-    const template = `<article>
-    <div class="actData">
-        <ul>
-        <li><strong>ACT_NAME</strong></li>
-        <li>TYPE</li>
-        <li><span>FROM</span> - <span>TO</span> @ <span>WHERE</span></li>
-        <li><span>More:</span> <a href='MFW_LINK'>MMM</a></li>
-        </ul>
-    </div>
+    const template = `<div class="act">
+        <div class="actName">
+            <h3>ACT_NAME</h3>
+        </div>
+        <article>
+            <div class="actData">
+                <ul>
+                <li>TYPE</li>
+                <li><span>FROM</span> - <span>TO</span> @ <span>WHERE</span></li>
+                </ul>
+            </div>
 
-    <div class="actButtons">
-        <button class="round-btn" id="info_ID" data-id="ID">info</button>
-        <button class="round-btn" id="save_ID" data-id="ID">save</button>
-        <button class="round-btn"><a href='MFW_LINK'>MFW</a></button>
-	</div>
-    </article>`;
+            <div class="actButtons">
+                <button class="round-btn" id="info_ID" data-id="ID">info</button>
+                <button class="round-btn" id="save_ID" data-id="ID">save</button>
+                <button class="round-btn"><a href='MFW_LINK'>MFW</a></button>
+            </div>
+        </article>
+    </div>`;
     let content = '';
     for (let i = 0; i < actsSorted.length; i++) {
         if (actsSorted[i].start>=localStorage.startTime && actsSorted[i].start<=localStorage.endTime) {

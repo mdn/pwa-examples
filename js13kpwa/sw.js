@@ -3,15 +3,19 @@ self.importScripts('data/stages.js');
 self.importScripts('data/acts.js');
 self.importScripts('controller/contentFav.js');
 self.importScripts('controller/contentMain.js');
-//self.importScripts('controller/deleteAct.js');
+self.importScripts('controller/deleteAct.js');
+self.importScripts('controller/filterMenu.js');
 self.importScripts('controller/initStorage.js');
 self.importScripts('controller/saveAct.js');
 self.importScripts('controller/showInof.js');
+self.importScripts('helper/moment.js');
+console.log("test")
 
 // Files to cache
 const cacheName = 'vorneLinksApp';
 const appShellFiles = [
   '/index.html',
+  '/favorites.html',
   '/app.js',
   '/style.css',
   '/fonts/graduate.eot',
@@ -29,11 +33,12 @@ const appShellFiles = [
   'img/icons/icon-256.png',
   'img/icons/icon-512.png',
 ];
-const gamesImages = [];
+/*const gamesImages = [];
 for (let i = 0; i < games.length; i++) {
   gamesImages.push(`data/img/${games[i].slug}.jpg`);
 }
-const contentToCache = appShellFiles.concat(gamesImages);
+const contentToCache = appShellFiles.concat(gamesImages);*/
+const contentToCache = appShellFiles;
 
 // Installing Service Worker
 self.addEventListener('install', (e) => {
