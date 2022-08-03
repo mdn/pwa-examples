@@ -4,11 +4,19 @@ import {contentMain} from "./controller/contentMain.js";
 import {contentFav} from "./controller/contentFav.js";
 import {initStorage} from "./controller/initStorage.js";
 import {removeFavorites} from "./controller/deleteAct.js";
-contentMain();
-contentFav();
+import {setFilterDate} from "./controller/filterMenu.js";
 initStorage();
+setFilterDate();
+const mainPage = document.getElementById('content-main');
 
-console.log(moment().format());
+    if (mainPage) {
+        contentMain();
+    }
+    else{
+        contentFav();
+    }
+
+
 
 
 // Registering Service Worker

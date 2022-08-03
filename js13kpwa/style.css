@@ -187,7 +187,7 @@ footer a {
   div#dateFilter>button{
 	display: inline-block
   }
-  button.round{
+  button.round-btn{
 	border-radius: 3.75rem;
 	align-items: center;
 	width: 5rem;
@@ -195,6 +195,9 @@ footer a {
 	box-sizing: border-box;
     border: 1px solid rgb(9, 207, 52);
   }
-  button.round>span{
+  button.round-btn>span{
 	display: block;
+  }
+  button.round-btn.selected{
+	background-color: #df4632
   }
