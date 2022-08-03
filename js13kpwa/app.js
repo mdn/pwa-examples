@@ -16,12 +16,10 @@ const mainPage = document.getElementById('content-main');
         contentFav();
     }
 
-console.log("checkBrowser for serviceworker:",navigator.serviceWorker)
 
 // Registering Service Worker
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js')
-  console.log("test");
+  navigator.serviceWorker.register('/sw.js');
 }
 
 // Requesting permission for Notifications after clicking on the button

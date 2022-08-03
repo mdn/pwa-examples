@@ -1,5 +1,6 @@
 export function initStorage(){
     const defaultFavs = JSON.stringify({"list": [9998899]});
+    const defaultFriends = JSON.stringify([{"favorites": [9998899],"friendName" : "test"}]);
     let defaultDate = moment().unix()
     if (moment().dayOfYear()<222) {
         defaultDate = moment().dayOfYear(222).hour(0).minute(0).second(0).unix()
@@ -23,6 +24,12 @@ export function initStorage(){
     else{
         console.log("date filters list allready initialized")
     } 
+    if (!localStorage.getItem("friends")) {
+        localStorage.friends = defaultFriends
+        
+    } else {
+        console.log("friends list allready initialized")
+    }
 
 }
     

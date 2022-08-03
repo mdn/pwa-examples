@@ -46,7 +46,7 @@ h3 {
 	font-size: 1.5em;
 	line-height: 1em;
 	padding-top: 0.2em;
-	margin-bottom: 0.8em;
+	margin: 0.3em;
 }
 a {
 	text-decoration: none;
@@ -103,7 +103,7 @@ article>div.actData{
 	vertical-align: top;
 }
 .actName{
-	text-align: center;
+	text-align: left;
 }
 div.actButtons{
 	text-align: center;
