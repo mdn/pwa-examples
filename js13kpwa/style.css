@@ -200,6 +200,9 @@ footer a {
 	background-color: #2da4b1;
 	border: 3px solid #24f150;
   }
+  button.round-btn.hide{
+	display: none;
+  }
   div.progFav{
 	display: block;
 	height: 5rem;

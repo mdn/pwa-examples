@@ -21,12 +21,23 @@ export function contentMain(){
                 <button class="round-btn" id="info_ID" data-id="ID">info</button>
                 <button class="round-btn" id="save_ID" data-id="ID">save</button>
                 <button class="round-btn"><a href='MFW_LINK'>MFW</a></button>
+                <button class="round-btn" id="friends_ID" data-friendsCount=FRIENDS>FRIENDS</button>
             </div>
         </article>
     </div>`;
     let content = '';
     for (let i = 0; i < actsSorted.length; i++) {
         if (actsSorted[i].start>=localStorage.startTime && actsSorted[i].start<=localStorage.endTime) {
+            let friendsCount=0
+            for (const friend of JSON.parse(localStorage.friends)) {
+                //console.log("friend",friend)
+                for (const favorites of friend.favorites) {
+                    if (favorites == i) {
+                        friendsCount=friendsCount+1
+                        console.log("favorites:",favorites,"i:",i,favorites == i,friendsCount)
+                    }                
+                }
+            }
             let entry = template.replace(/POS/g, (i + 1))
                 .replace(/ACT_NAME/g, actsSorted[i].name)
                 .replace(/TYPE/g, actsSorted[i].style)
@@ -34,7 +45,9 @@ export function contentMain(){
                 .replace(/FROM/g, moment.unix(actsSorted[i].start).format("HH:mm"))
                 .replace(/TO/g, moment.unix(actsSorted[i].end).format("HH:mm"))
                 .replace(/WHERE/g, stages[actsSorted[i].location-1].name)
-                .replace(/ID/g, actsSorted[i].id);
+                .replace(/ID/g, actsSorted[i].id)
+                .replace(/FRIENDS/g, friendsCount);
+                
                 
             entry = entry.replace('<a href=\'http:///\'></a>', '-');
             content += entry;
@@ -58,6 +71,10 @@ export function contentMain(){
                     add2Favorites(actsSorted[i].id)
                     saveButton.classList.add("selected")
                 })          
+            }
+        const friendsButton= document.getElementById(`friends_${actsSorted[i].id}`)
+            if(friendsButton && friendsButton.dataset.friendscount=="0"){
+                friendsButton.remove()
             }
             
         
