@@ -83,6 +83,7 @@ export function contentFav(){
                 }
             })
             
+            
 
     }
     function pubButtonEventFirst(){
@@ -148,14 +149,13 @@ export function contentFav(){
     const friendButton = document.getElementById("getFriends")
     friendButton.addEventListener("click",()=>{
         const newFriend = document.getElementById("friendsName").value
-        let xhrCheckName = new XMLHttpRequest
-        xhrCheckName.open("GET",`https://diariumobscuri.azurewebsites.net/checkName?name=${newFriend}`)
-        xhrCheckName.setRequestHeader('Content-Type', 'application/json') ;
-        xhrCheckName.setRequestHeader('Access-Control-Allow-Origin', '*' );
-        xhrCheckName.send();
-        xhrCheckName.onreadystatechange = function(){
-            if (xhrCheckName.readyState == 4) {
-                console.log(JSON.parse(xhrCheckName.response)[0].nameFound)
+        if (newFriend.length>0) {
+            let xhrCheckName = new XMLHttpRequest
+            xhrCheckName.open("GET",`https://diariumobscuri.azurewebsites.net/checkName?name=${newFriend}`)
+            xhrCheckName.setRequestHeader('Content-Type', 'application/json') ;
+            xhrCheckName.setRequestHeader('Access-Control-Allow-Origin', '*' );
+            xhrCheckName.send(null);
+            xhrCheckName.addEventListener("loadend",()=>{
                 if (JSON.parse(xhrCheckName.response)[0].nameFound == 0) {
                     alert("nichts gefunden unter diesem namen")
                 }
@@ -167,59 +167,58 @@ export function contentFav(){
                     newElement["favorites"]=friendFav
                     newElement["friendName"]=friendName
                     let check = 0
+                    console.log("oldList",oldList)
                     for (let i = 0; i < oldList.length; i++) {
                         if (oldList[i].friendName == friendName){
                             check =1;
+                            //console.log("element allredy in list")
                         }
                         
                     }
                     if (check==0) {
+                        //console.log("new element pushed")
                         oldList.push(newElement)
                         localStorage.friends=JSON.stringify(oldList)
+                        updateFriends()
                     }
-                    updateFriends()
-                } 
-            }
-        }
-
-    })
-    function updateFriends(){
-        let friendsList = JSON.parse(localStorage.friends)
-        //friendsList.splice(1,friendsList.length)
-        let newFriendsList = [];
-        for (let i = 0; i < friendsList.length; i++) {
-            let xhr = new XMLHttpRequest
-            console.log("name",`${friendsList[i].friendName}`)
-            xhr.open("GET",`https://diariumobscuri.azurewebsites.net/checkName?name=${friendsList[i].friendName}`)
-            xhr.setRequestHeader('Content-Type', 'application/json') ;
-            xhr.setRequestHeader('Access-Control-Allow-Origin', '*' );
-            xhr.send();
-            xhr.onreadystatechange = function(){
-                if (xhr.readyState == 4) {
-                    let friendFav=JSON.parse(xhr.response)[1].favorites
-                    let friendName=JSON.parse(xhr.response)[1].name
-                    let newElement = {
-                        "favorites" : friendFav,
-                        "friendName" : friendName
-                    }
-                    console.log("newElement",newElement)
-                    friendsList.push({
-                        "favorites" : friendFav,
-                        "friendName" : friendName,
-                        "id" : 123
-
-                    })
                 }
+                
+            })  
+                    
+        }updateFriends()
+    })
             
-            
+    function updateFriends(){    
+        let newList = []
+        
+        let xhr = new XMLHttpRequest
+        xhr.open("GET",`https://diariumobscuri.azurewebsites.net/getFriends`)
+        xhr.setRequestHeader('Content-Type', 'application/json') ;
+        xhr.setRequestHeader('Access-Control-Allow-Origin', '*' );
+        xhr.send(null);
+        xhr.addEventListener("loadend",()=>{
+            let response=JSON.parse(xhr.response)
+            console.log(response)
+            for (let i_2 = 0; i_2 < response.length; i_2++) {
+                for (const entry of JSON.parse(localStorage.friends)) {
+                    //console.log("entry",entry,"response",response[i_2].name)
+                    if (response[i_2].name == entry.friendName) {
+                        //console.log("match found")
+                        newList.push({
+                            "friendName" : response[i_2].name,
+                            "favorites" : response[i_2].favorites
+                        })
+                    }
+                }
             }
-
-            console.log("new Friendslist",JSON.stringify(newFriendsList))
-          
-            console.log("new Friendslist",newFriendsList)
-            console.log("Friendslist",friendsList)
-            //localStorage.friends=JSON.stringify(newFriendsList)
+        
+        console.log("stringified",JSON.stringify(newList),newList)
+        if (JSON.stringify(newList).length>10) {
+            localStorage.friends=JSON.stringify(newList)
         }
+  
+       
+        })
     }
 
 }
