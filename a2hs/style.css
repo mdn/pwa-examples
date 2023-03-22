@@ -17,6 +17,7 @@ img {
   position: absolute;
   top: 1px;
   left: 1px;
+  display: none;
 }
 
 @media (orientation: landscape) {
