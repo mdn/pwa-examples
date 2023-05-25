@@ -60,7 +60,7 @@ function renderPastPeriods() {
   const pastPeriodHeader = document.createElement("h2");
   const pastPeriodList = document.createElement("ul");
   const periods = getAllStoredPeriods();
-  if (Object.keys(periods).length === 0) {
+  if (periods.length === 0) {
     return;
   }
   pastPeriodContainer.innerHTML = "";
