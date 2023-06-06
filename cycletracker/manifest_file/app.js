@@ -36,7 +36,6 @@ function checkDatesInvalid(startDate, endDate) {
     newPeriodFormEl.reset();
     return true;
   }
-  return false;
 }
 
 // 2. Get, add, sort, and store data
