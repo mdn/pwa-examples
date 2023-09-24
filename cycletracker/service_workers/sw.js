@@ -57,10 +57,9 @@ self.addEventListener("fetch", (event) => {
       if (cachedResponse) {
         // Return the cached response if it's available.
         return cachedResponse;
-      } else {
-        // If resource isn't in the cache, return a 404.
-        return new Response(null, { status: 404 });
       }
+      // If resource isn't in the cache, return a 404.
+      return new Response(null, { status: 404 });
     })()
   );
 });
