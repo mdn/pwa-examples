@@ -69,7 +69,7 @@ function renderPastPeriods() {
   periods.forEach((period) => {
     const periodEl = document.createElement("li");
     periodEl.textContent = `From ${formatDate(
-      period.startDate
+      period.startDate,
     )} to ${formatDate(period.endDate)}`;
     pastPeriodList.appendChild(periodEl);
   });
