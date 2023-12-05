@@ -9,7 +9,7 @@ const APP_STATIC_RESOURCES = [
   "/",
   "/index.html",
   "/app.js",
-  "/styles.css",
+  "/style.css",
   "/icons/wheel.svg",
 ];
 
@@ -19,7 +19,7 @@ self.addEventListener("install", (event) => {
     (async () => {
       const cache = await caches.open(CACHE_NAME);
       cache.addAll(APP_STATIC_RESOURCES);
-    })(),
+    })()
   );
 });
 
@@ -33,10 +33,10 @@ self.addEventListener("activate", (event) => {
           if (name !== CACHE_NAME) {
             return caches.delete(name);
           }
-        }),
+        })
       );
       await clients.claim();
-    })(),
+    })()
   );
 });
 
@@ -60,6 +60,6 @@ self.addEventListener("fetch", (event) => {
       }
       // If resource isn't in the cache, return a 404.
       return new Response(null, { status: 404 });
-    })(),
+    })()
   );
 });
