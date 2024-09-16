@@ -4,7 +4,7 @@ Examples for progressive web apps.
 
 In this repo, we currently have:
 
-* [CycleTracker](): A basic app for tracking menstrual cycles. The app's HTML includes a form to add a period cycle start and end dates. The JavaScript app functionality sorts the dates and saves thems to local storage. It also displays the dates retrieved from local storage below the form. The app includes a manifest file with three icons, color scheme, etc. The app also includes a service worker to handle asset caching.
+* [CycleTracker](cycletracker): A basic app for tracking menstrual cycles. The app's HTML includes a form to add a period cycle start and end dates. The JavaScript app functionality sorts the dates and saves thems to local storage. It also displays the dates retrieved from local storage below the form. The app includes a manifest file with three icons, color scheme, etc. The app also includes a service worker to handle asset caching.
 
 * [a2hs](a2hs): An example set up to show how Add to home screen (A2HS) works. [See it live here](https://mdn.github.io/pwa-examples/a2hs/). This includes an icon and [manifest file](a2hs/manifest.webmanifest) for allowing the app to be added to home screen, and a [simple service worker](a2hs/sw.js) for making the site work offline.
 
