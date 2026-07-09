@@ -64,7 +64,7 @@ function renderPastPeriods() {
   if (periods.length === 0) {
     return;
   }
-  pastPeriodContainer.innerHTML = "";
+  pastPeriodContainer.replaceChildren();
   pastPeriodHeader.textContent = "Past periods";
   periods.forEach((period) => {
     const periodEl = document.createElement("li");

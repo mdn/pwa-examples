@@ -1,28 +1,78 @@
 // Generating content based on the template
-const template = `<article>
-  <img src='data/img/placeholder.png' data-src='data/img/SLUG.jpg' alt='NAME'>
-  <h3>#POS. NAME</h3>
-  <ul>
-  <li><span>Author:</span> <strong>AUTHOR</strong></li>
-  <li><span>Twitter:</span> <a href='https://twitter.com/TWITTER'>@TWITTER</a></li>
-  <li><span>Website:</span> <a href='http://WEBSITE/'>WEBSITE</a></li>
-  <li><span>GitHub:</span> <a href='https://GITHUB'>GITHUB</a></li>
-  <li><span>More:</span> <a href='http://js13kgames.com/entries/SLUG'>js13kgames.com/entries/SLUG</a></li>
-  </ul>
-</article>`;
-let content = '';
-for (let i = 0; i < games.length; i++) {
-  let entry = template.replace(/POS/g, (i + 1))
-    .replace(/SLUG/g, games[i].slug)
-    .replace(/NAME/g, games[i].name)
-    .replace(/AUTHOR/g, games[i].author)
-    .replace(/TWITTER/g, games[i].twitter)
-    .replace(/WEBSITE/g, games[i].website)
-    .replace(/GITHUB/g, games[i].github);
-  entry = entry.replace('<a href=\'http:///\'></a>', '-');
-  content += entry;
-}
-document.getElementById('content').innerHTML = content;
+const fragment = document.createDocumentFragment();
+games.forEach((item,i) => {
+  const article = document.createElement("article");
+
+  const image = document.createElement("img");
+  image.src = "data/img/placeholder.png";
+  image.setAttribute('data-src', `data/img/${item?.slug || "SLUG"}.jpg`);
+  image.alt = item?.name || "NAME";
+  article.appendChild(image);
+
+  const h3 = document.createElement("h3");
+  h3.textContent = `#${i + 1}. ${item.name}`;
+  article.appendChild(h3);
+
+  const list = document.createElement('ul');
+
+  const createListItem = (label, node) => {
+    const li = document.createElement('li');
+    const span = document.createElement('span');
+    span.textContent = label;
+    li.appendChild(span);
+    li.appendChild(document.createTextNode(' '));
+    li.appendChild(node);
+    return li;
+  }
+
+  const author = document.createElement('strong');
+  author.textContent = item.author || '-';
+  list.appendChild(createListItem('Author:', author));
+
+  const twitter = item.twitter
+    ? (() => {
+      const a = document.createElement('a');
+      a.href = `https://twitter.com/${item.twitter}`;
+      a.textContent = `@${item.twitter}`;
+      return a;
+    })()
+    : document.createTextNode('-');
+
+  list.appendChild(createListItem('Twitter:', twitter));
+
+
+  const website = item.website
+    ? (() => {
+      const a = document.createElement('a');
+      a.href = `http://${item.website}/`;
+      a.textContent = item.website;
+      return a;
+    })()
+    : document.createTextNode('-');
+
+  list.appendChild(createListItem('Website:', website));
+
+  const github = item.github
+    ? (() => {
+      const a = document.createElement('a');
+      a.href = `https://${item.github}`;
+      a.textContent = item.github;
+      return a;
+    })()
+    : document.createTextNode('-');
+
+  list.appendChild(createListItem('GitHub:', github));
+
+  const moreLink = document.createElement('a');
+  moreLink.href = `http://js13kgames.com/entries/${item.slug}`;
+  moreLink.textContent = `js13kgames.com/entries/${item.slug}`;
+
+  list.appendChild(createListItem('More:', moreLink));
+
+  article.appendChild(list);
+  fragment.appendChild(article);
+});
+document.getElementById('content').replaceChildren(fragment);
 
 // Registering Service Worker
 if ('serviceWorker' in navigator) {
