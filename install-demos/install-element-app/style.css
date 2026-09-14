@@ -1,0 +1,45 @@
+html {
+  height: 100%;
+  background: black;
+}
+
+body {
+  height: inherit;
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.add-button {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  display: none;
+}
+
+@media (orientation: landscape) {
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* install button */
+
+install {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 1.3rem;
+}
+
+/* hide install button if viewing app */
+
+@media not (display-mode: browser) {
+  install {
+    display: none;
+  }
+}
