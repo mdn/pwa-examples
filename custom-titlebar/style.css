@@ -63,13 +63,9 @@ p {
 /* Control window controls overlay dragging behavior */
 
 #titlebar {
-  -webkit-app-region: drag;
-  app-region: drag;
   window-drag: move;
 }
 
 #titlebar * {
-  -webkit-app-region: no-drag;
-  app-region: no-drag;
   window-drag: none;
 }
