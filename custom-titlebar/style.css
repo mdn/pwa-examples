@@ -1,0 +1,71 @@
+/* General styles */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: inherit;
+  background: purple;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+p {
+  color: white;
+  text-align: center;
+}
+
+/* Titlebar styling */
+
+#titlebar {
+  color: white;
+  background-image: linear-gradient(
+    to right,
+    purple 25%,
+    hsl(from purple h s calc(l + 10)),
+    purple 75%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  /* Use the environment variable for the left anchoring with a fallback. */
+  left: env(titlebar-area-x, 0);
+  /* Use the environment variable for the top anchoring with a fallback. */
+  top: env(titlebar-area-y, 0);
+  /* Use the environment variable for setting the width with a fallback. */
+  width: env(titlebar-area-width, 100%);
+  /* Use the environment variable for setting the height with a fallback. */
+  height: env(titlebar-area-height, 33px);
+}
+
+#titlebar > input {
+  position: relative;
+  bottom: 2px;
+  margin-left: 10px;
+}
+
+#titlebar > input:not(:last-child) {
+  margin-right: 20px;
+}
+
+/* Control window controls overlay dragging behavior */
+
+#titlebar {
+  window-drag: move;
+}
+
+#titlebar * {
+  window-drag: none;
+}
