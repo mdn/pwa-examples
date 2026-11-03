@@ -1,0 +1,16 @@
+{
+  "background_color": "purple",
+  "theme_color": "purple",
+  "description": "A basic example app to explore creating a custom draggable PWA titlebar",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay"],
+  "icons": [
+    {
+      "src": "icon/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "Custom titlebar",
+  "start_url": "./"
+}
