@@ -6,15 +6,18 @@ function randomValueFromArray(array) {
   return array[randomNo];
 }
 
-setInterval(() => {
+function changeImage() {
   const randomChoice = randomValueFromArray(images);
   imgElem.src = `images/${randomChoice}.jpg`;
-}, 2000);
+}
+
+document.body.addEventListener("click", changeImage);
+document.body.addEventListener("keydown", changeImage);
 
 // Register service worker to control making site work offline
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/pwa-examples/a2hs/sw.js").then(() => {
+  navigator.serviceWorker.register("./sw.js").then(() => {
     console.log("Service Worker Registered");
   });
 }
@@ -22,15 +25,17 @@ if ("serviceWorker" in navigator) {
 // Install button test
 
 const installElem = document.querySelector("install");
-console.log(installElem.manifestId);
-console.log(installElem.manifest);
-console.log(installElem.isValid);
-console.log(installElem.invalidReason);
+console.log(`manifestId: ${installElem.manifestId}`);
+console.log(`manifest: ${installElem.manifest}`);
+console.log(`isValid: ${installElem.isValid}`);
+if (!installElem.isValid) {
+  console.log(`invalidReason: ${installElem.invalidReason}`);
+}
 
 installElem.addEventListener("installresult", (e) => {
   console.log(`Install result: ${e.result}`);
 });
 
 installElem.addEventListener("validationstatuschange", (e) => {
-  console.log(e.isTrusted);
+  console.log(`isTrusted: ${e.isTrusted}`);
 });
