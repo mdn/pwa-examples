@@ -26,19 +26,15 @@ if ("serviceWorker" in navigator) {
 
 const installElem = document.querySelector("install");
 
-installElem.addEventListener("click", () => {
+installElem.addEventListener("installresult", (e) => {
   console.log(`manifestId: ${installElem.manifestId}`);
   console.log(`manifest: ${installElem.manifest}`);
-  console.log(`isValid: ${installElem.isValid}`);
-  if (!installElem.isValid) {
-    console.log(`invalidReason: ${installElem.invalidReason}`);
-  }
-});
-
-installElem.addEventListener("installresult", (e) => {
   console.log(`Install result: ${e.result}`);
 });
 
 installElem.addEventListener("validationstatuschange", (e) => {
-  console.log(`isTrusted: ${e.isTrusted}`);
+  console.log(`isValid: ${installElem.isValid}`);
+  if (!installElem.isValid) {
+    console.log(`invalidReason: ${installElem.invalidReason}`);
+  }
 });
