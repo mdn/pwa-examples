@@ -7,13 +7,13 @@ for (const btn of installBtns) {
     if (!btn.isValid) {
       console.log(`invalidReason: ${btn.invalidReason}`);
     }
+  });
 
-    btn.addEventListener("installresult", (e) => {
-      console.log(`Install result: ${e.result}`);
-    });
+  btn.addEventListener("installresult", (e) => {
+    console.log(`Install result: ${e.result}`);
+  });
 
-    btn.addEventListener("validationstatuschange", (e) => {
-      console.log(`isTrusted: ${e.isTrusted}`);
-    });
+  btn.addEventListener("validationstatuschange", (e) => {
+    console.log(`isTrusted: ${e.isTrusted}`);
   });
 }
