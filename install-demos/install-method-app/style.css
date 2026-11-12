@@ -1,0 +1,20 @@
+html {
+  font-family: sans-serif;
+}
+
+/* install button */
+
+#install {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 1.3rem;
+}
+
+/* hide install button if viewing app */
+
+@media not (display-mode: browser) {
+  #install {
+    display: none;
+  }
+}

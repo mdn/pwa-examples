@@ -1,0 +1,48 @@
+html {
+  height: 100%;
+  background: black;
+  font-size: 1.3rem;
+  font-family: sans-serif;
+}
+
+body {
+  height: inherit;
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+p {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  margin: 0;
+  padding: 5px;
+  background: rgb(255 255 255 / 0.5);
+}
+
+@media (orientation: landscape) {
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* install button */
+
+install {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+/* hide install button if viewing app */
+
+@media not (display-mode: browser) {
+  install {
+    display: none;
+  }
+}

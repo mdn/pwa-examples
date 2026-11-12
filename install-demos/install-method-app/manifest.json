@@ -1,0 +1,19 @@
+{
+  "name": "Generic app",
+  "short_name": "Generic",
+  "start_url": "./",
+  "id": "v1",
+  "background_color": "#eeffee",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48"
+    },
+    {
+      "src": "icons/circle.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
